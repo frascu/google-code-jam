@@ -1,4 +1,5 @@
 package org.frascu.problem.tidynumbers;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -27,32 +28,33 @@ public class TidiNumbersProblem {
 
 				if (isTidy(j)) {
 					printOnFile(out, i, j);
-				} else {
-					while (j >= 0) {
-						String numberStringSeq = String.valueOf(j);
-						char[] digits = numberStringSeq.toCharArray();
+					continue;
+				}
 
-						if (number != null) {
-							if (number.getNumber() == j) {
-								for (int y = digits.length - 1; y > number.getPosition(); y--) {
-									int n = digits[y] - '0';
-									if (n == number.getDigit() || n == 0) {
-										digits[y] = '9';
-									}
+				while (j >= 0) {
+					String numberStringSeq = String.valueOf(j);
+					char[] digits = numberStringSeq.toCharArray();
+
+					if (number != null) {
+						if (number.getNumber() == j) {
+							for (int y = digits.length - 1; y > number.getPosition(); y--) {
+								int n = digits[y] - '0';
+								if (n == number.getDigit() || n == 0) {
+									digits[y] = '9';
 								}
-								digits[number.getPosition()] = (char) (digits[number.getPosition()] - '1' + '0');
-								j = Long.parseLong(String.valueOf(digits));
 							}
-						}
-
-						if (isTidy(j)) {
-							printOnFile(out, i, j);
-							break;
-						} else {
-							number = getRepeatedNumber(digits);
-							j--;
+							digits[number.getPosition()] = (char) (digits[number.getPosition()] - '1' + '0');
+							j = Long.parseLong(String.valueOf(digits));
 						}
 					}
+
+					if (isTidy(j)) {
+						printOnFile(out, i, j);
+						break;
+					}
+
+					number = getRepeatedNumber(digits);
+					j--;
 				}
 			}
 		} catch (IOException e) {
