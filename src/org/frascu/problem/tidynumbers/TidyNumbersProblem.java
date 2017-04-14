@@ -6,7 +6,7 @@ import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.util.List;
 
-public class TidiNumbersProblem {
+public class TidyNumbersProblem {
 
 	public static void main(String[] args) {
 		resolve("input/tidynumbers/input.txt");
