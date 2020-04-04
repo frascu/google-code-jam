@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 public class ThirdSolution {
 
+	// Problem link:
+	// https://codingcompetitions.withgoogle.com/codejam/round/000000000019fd27/000000000020bdf9
 	static class IntPair {
 		private final int start;
 		private final int end;
