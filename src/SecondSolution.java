@@ -3,6 +3,8 @@ import java.util.Scanner;
 
 public class SecondSolution {
 
+	// Problem Link:
+	// https://codingcompetitions.withgoogle.com/codejam/round/000000000019fd27/0000000000209a9f
 	public static void main(String[] args) {
 		try (Scanner scanner = new Scanner(System.in)) {
 			int t = scanner.nextInt();
