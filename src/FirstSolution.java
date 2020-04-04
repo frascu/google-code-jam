@@ -4,6 +4,8 @@ import java.util.Set;
 
 public class FirstSolution {
 
+	// Problem link:
+	// https://codingcompetitions.withgoogle.com/codejam/round/000000000019fd27/000000000020993c
 	public static void main(String[] args) {
 		try (Scanner scanner = new Scanner(System.in)) {
 			int t = scanner.nextInt();
